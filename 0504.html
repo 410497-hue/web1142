@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>0504-JS亂數與計時器</title>
+<style>
+#lottery{font-size: 100pt;
+font-family: verdana,Geneva,Tahoma,sans-serif;}
+
+
+</style>
+
+<script>
+     function getRand(min,max){
+        return Math.floor(Math.random()*(max-min+1))+min;
+     }
+     function getLottery(){
+        setTimeout(clearInterval, 3000, setInterval(()=>{
+            document.getElementById("lottery").innerHTML=getRand 
+        }))
+     }
+
+
+
+
+
+
+
+
+/*function getLottery(){
+        document.getElementById("lottery").innerHTML = getRand(1,99);
+     }*/
+
+</script>
+
+</head>
+<body>
+    <buttom onclick="getLottery()">抽籤</buttom>
+     <div id="lottery">99</div> 
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
