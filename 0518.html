@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>0518-鍵盤控制人物移動</title>
+<style>
+
+body{
+background: url("");
+background-size: 300px 210px;
+}
+@keyframes walking{
+          0%{background-position-x: 0px;}
+          100%{background-position-x: -144;}
+}
+#role{
+      width: 48px;
+      height: 72px; 
+      background: url("");
+     animation: walking 600ms steps(3) infinite;
+    }
+</style>
+<script>
+         function mykeydown(){
+               event.preventDefault();
+               var role=document.getElementById("role");
+               if(event.ket=="ArrowDown"){
+                  role.style.backgroundPositionY="0px"; 
+                  role.pos.y++;
+                }
+                else if(event.key=="ArrowLeft"){
+                  role.style.backgroundPositionY="-72px";
+                  if(role.pos.x > 0)role.pos.x--;
+                }
+                else if(event.key=="ArrowRight"){
+                  role.style.backgroundPositionY="-144px";
+                role.pos.x++;
+                }
+                else if(event.key=="ArrowUp"){
+                  role.style.backgroundPositionY="-216px";
+                  if(role.pos.y > 0) role.pos.y--;
+                }
+               role.style.top=role.pos.y+"px";
+               role.styie.left=role.pos.x+"px";
+            }
+         function role_moving(){
+
+
+
+
+
+            
+         }
+
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</head>    
+
+
+<body>
+  
+
+
+
+
+
+
+</body>
+</html>
