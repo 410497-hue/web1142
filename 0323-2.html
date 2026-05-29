@@ -1,245 +1,106 @@
-
-
-
-
-
-html>
+<html>
 <head>
-             <title>0323-2CSS動畫
+	<title>0323-CSS動畫</title>
+	<style>
+		div {
+			margin-bottom: 10px;
+			width: 400px;
+			height: 100px;
+			display: inline-block;
+		}
+		@keyframes kd1 {
+			0% { background: linear-gradient(0deg, red,blue); }
+			8% { background: linear-gradient(30deg, red,blue); }
+			17% { background: linear-gradient(60deg, red,blue); }
+			25% { background: linear-gradient(90deg, red,blue); }
+			33% { background: linear-gradient(120deg, red,blue); }
+			42% { background: linear-gradient(150deg, red,blue); }
+			50% { background: linear-gradient(180deg, red,blue); }
+			58% { background: linear-gradient(210deg, red,blue); }
+			67% { background: linear-gradient(240deg, red,blue); }
+			75% { background: linear-gradient(270deg, red,blue); }
+			83% { background: linear-gradient(300deg, red,blue); }
+			92% { background: linear-gradient(330deg, red,blue); }
+			100% { background: linear-gradient(360deg, red,blue); }
+		}
+		/* animation: 動畫名稱 播放一次的時間(s/ms) 播放次數infinite 播放速度linear */
+		#d1 {
+			background: linear-gradient(90deg, red,blue);
+			animation: kd1 0.5s infinite linear;
+		}
 
-             </title>
-            <style>
-div{
-          width: 200px;
-        height: 100px;
-      margin: 100px;
-    }
-        
-        @keyframes kd1{
-                0%{background: linear-gradient(0deg,red,blue);}
-                8%{background: linear-gradient(30deg,red,blue);}
-                17%{background: linear-gradient(60deg,red,blue);}
-                25%{background: linear-gradient(90deg,red,blue);}
-                33%{background: linear-gradient(120deg,red,blue);}
-                42%{background: linear-gradient(150deg,red,blue);}
-                58%{background: linear-gradient(180deg,red,blue);}
-                58%{background: linear-gradient(210deg,red,blue);}
-                67%{background: linear-gradient(240deg,red,blue);}
-                75%{background: linear-gradient(270deg,red,blue);}
-                83%{background: linear-gradient(300deg,red,blue);}
-                92%{background: linear-gradient(330deg,red,blue);}
-                100%{background: linear-gradient(360deg,red,blue);}
+		#d2 {
+			height: 50px;
+			background: linear-gradient(90deg, red,orange,yellow,green,blue,indigo,violet);
+		}
+		#d3 {
+			background: linear-gradient(90deg, red 33%,white 33%,white 67%,blue 67%);
+		}
 
- }
+		@keyframes kd4 {
+			0%{background: repeating-linear-gradient(45deg,red 30%,white 35%,green 40%,white 45%,red 50%);}
+			25%{background: repeating-linear-gradient(45deg,white 30%,green 35%,white 40%,red 45%,white 50%);}
+			50%{background: repeating-linear-gradient(45deg,green 30%,white 35%,red 40%,white 45%,green 50%);}
+			75%{background: repeating-linear-gradient(45deg,white 30%,red 35%,white 40%,green 45%,white 50%);}
+			100%{background: repeating-linear-gradient(45deg,red 30%,white 35%,green 40%,white 45%,red 50%);}
+		}
+		#d4 {
+			height: 50px;
+			background: repeating-linear-gradient(45deg,red 30%,white 35%,green 40%,white 45%,red 50%);
+			animation: kd4 0.7s infinite linear;
+		}
 
-    #d1{
-        background: linear-gradient(to bottom,red,yellow);
-       animation: kd1 0.5s infinite linear;
-    }
+		@keyframes kr1 {
+			0%{background: radial-gradient(circle,yellow,white 50%,black 70%);}
+			25%{background: radial-gradient(circle,yellow,white 40%,black 70%);}
+			50%{background: radial-gradient(circle,yellow,white 30%,black 70%);}
+			75%{background: radial-gradient(circle,yellow,white 40%,black 70%);}
+			100%{background: radial-gradient(circle,yellow,white 50%,black 70%);}
+		}
+		#r1 {
+			height: 200px;
+			background: radial-gradient(circle,yellow,white 50%,black 70%);
+			animation: kr1 0.6s infinite linear;
+		}
 
-#d2{
-     height: 50px;
-     background: linear-gradient(90deg,red,orange,yellow,green,blue,indigo,violet);
-}
+		@keyframes kr2 {
+			0%{background: repeating-radial-gradient(circle,gray 20%,white 30%,gray 40%);}
+			50%{background: repeating-radial-gradient(circle,white 20%,gray 30%,white 40%);}
+			100%{background: repeating-radial-gradient(circle,gray 20%,white 30%,gray 40%);}
+		}
+		#r2 {
+			height: 200px;
+			background: repeating-radial-gradient(circle,gray 20%,white 30%,gray 40%);
+			animation: kr2 0.5s infinite linear;
+		}
 
-#d3{
-    background: linear-gradient(90deg,red 33%,white 33%,white 67%,blue 67%);
-}   
-#d4{
-      height: 50px; 
-     background:repeating-linear-gradient(45deg,red 30%,white 35%,green 40%,white 45%,red 50%) ;
-}
+		#c1 {
+			height: 200px;
+			background: conic-gradient(red,yellow,green,cyan,blue,magenta,red);
+		}
 
-
-#r1{
-    height: 200px;
-    background: repeating-radial-gradient(circle,yellow,white 50%,black 70%);
-}
-
-#r2{
-    height: 200px;
-    background: repeating-radial-gradient(circle,gray 20%,white 30%,gray 40%);
-    }
-
-#c1{
-     height: 200px;
-     background: conic-gradient(red,yellow,green,cyan,blue,magenta,red);
-}
-
-#c2{
-     height: 200px;
-     background:repeating-conic-gradient(red 10%,white 15%,red 10%);
- 
-
-}
-
-
-
-
-
-
-
-            </style>
-            </head>
+		@keyframes kc2 {
+			0%{background: repeating-conic-gradient(red 10%,white 15%,red 20%);}
+			50%{background: repeating-conic-gradient(white 10%,red 15%,white 20%);}
+			100%{background: repeating-conic-gradient(red 10%,white 15%,red 20%);}
+		}
+		#c2 {
+			height: 200px;
+			background: repeating-conic-gradient(red 10%,white 15%,red 20%);
+			animation: kc2 0.6s infinite linear;
+		}
+	</style>
+</head>
 <body>
-       
-    <div id="d1"></div>
-       <div id="d2"></div>
-       <div id="d3"></div>
-       <div id="d4"></div>
-    
-       <div id="r1"></div>
-       <div id="r2"></div>
-
-       <div id="c1"></div>
-       <div id="c2"></div>
-
-
-
-
-
-
-
-    </body>
-
-
-
-
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<div id="d1"></div>
+	<div id="d3"></div>
+	<div id="d2"></div>
+	<div id="d4"></div>
+
+	<div id="r1"></div>
+	<div id="r2"></div>
+
+	<div id="c1"></div>
+	<div id="c2"></div>
+</body>
 </html>
