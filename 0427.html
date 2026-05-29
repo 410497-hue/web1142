@@ -1,121 +1,69 @@
 <html>
 <head>
-<title>0427-元素控制</title>
-<style>
-      .dv{
-             display:inline-block;
-             width: 100px;
-             height: 80px;
-             margin: 5px;
-            border: 1px solid black;
-           border-radius: 5px;
-
-      }
-
-
-
-
-
-
-
-
-
-
-
-
-</style>
-<script>
-        function choose(elm){
-       if(elm.classList.comtains("selected")){elm.classList.remove("selected")}
-       else{
-          elm.classList.add("selected")
-       }
-  }
-
-function setColor(){
-Array.from(document.getElementsBy)
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
+	<title>0427-JS元素控制</title>
+	<style>
+		.dv {
+			display: inline-block;
+			width: 100px;
+			height: 80px;
+			margin: 5px;
+			border: 1px solid black;
+			border-radius: 5px;
+		}
+		.selected {
+			box-shadow: 0px 0px 5px black;
+		}
+		.select-one {
+			box-shadow: 0px 0px 5px red;
+		}
+	</style>
+	<script>
+		function toggle(elm) {
+			if(elm.classList.contains("selected")) {
+				elm.classList.remove("selected");
+			} else {
+				elm.classList.add("selected");
+			}
+		}
+		function setColor() {
+			Array.from(document.getElementsByClassName("selected")).forEach((a)=>{
+				a.style.backgroundColor=event.target.value;
+				a.classList.remove("selected");
+			});
+		}
+		////////////////////////////////////////////////
+		my={elm:null}; //全域變數
+		function choose(elm) {
+			if(my.elm != null) {
+				my.elm.classList.remove("select-one");
+			}
+			elm.classList.add("select-one");
+			my.elm=elm;
+		}
+		function setOneColor() {
+			my.elm.style.backgroundColor = event.target.value;
+		}
+		function setRound() {
+			my.elm.style.borderRadius = event.target.value + "px";
+		}
+	</script>
 </head>
-
-
-
-
-
-
-
-
-
-
 <body>
-<div class="dv" id="d1" onclick="toggie(this);"></div>
-<div class="dv selected" id="d2" onclick="toggie(this);"></div>
-<div class="dv" id="d3" onclick="toggie(this);"></div>
-<div class="dv" id="d4" onclick="toggie(this);"></div>
-
-
-
-
-
-
-
-
-
+	<div class="dv" onclick="toggle(this);"></div>
+	<div class="dv" onclick="toggle(this);"></div>
+	<div class="dv" onclick="toggle(this);"></div>
+	<div class="dv" onclick="toggle(this);"></div>
+	<div>
+		<input type="color" oninput="setColor();">
+	</div>
+	<hr>
+	<div class="dv" onclick="choose(this);"></div>
+	<div class="dv" onclick="choose(this);"></div>
+	<div class="dv" onclick="choose(this);"></div>
+	<div class="dv" onclick="choose(this);"></div>
+	<div>
+		<input type="color" oninput="setOneColor();">
+		<input type="range" max=50 oninput="setRound();">
+	</div>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
