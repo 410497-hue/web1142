@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>0413-CSS漸變、字型、陰影</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&display=swap" rel="stylesheet">
+	<style>
+		div {
+			margin-bottom: 20px;
+		}
+		#d1 {
+			width: 100px;
+			height: 50px;
+			background: red;
+			border: 3px solid pink;
+			transition: border .5s, background .5s;
+		}
+		#d1:hover {
+			background: pink;
+			border: 3px solid darkred;
+		}
+
+		#d2 {
+			width: 200px;
+			height: 100px;
+			background: red;
+			box-shadow: black 0px 0px 5px 5px;
+		}
+		#d3 {
+			font-size: 30pt;
+			color:white;
+			text-shadow: black 0px 0px 5px;
+		}
+		#d4 {
+			font-size: 30pt;
+			font-family: 'Playwrite IE','標楷體','新細明體',  serif;
+			font-weight: 500;
+		}
+		#d5 {
+			font-size: 30pt;
+			font-family: "Bitcount Grid Double",'微軟正黑體', sans-serif;
+			font-weight: 500;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="d1"></div>
+	<div id="d2"></div>
+	<div id="d3">文字</div>
+	<div id="d4">襯線體 Times New Roman</div>
+	<div id="d5">無襯線體 Arial, Helvetica</div>
+</body>
+</html>
