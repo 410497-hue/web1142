@@ -1,49 +1,81 @@
-<html>
-    <head><title>好玩的遊戲</title>
-<style>
-        body{
-        text-align: center;
-        background: lightblue;
-        }
-        #role{
-              width: 400px;
-              height: 500px;
-              background: white;
-              border: 2px solid black;
-              margin: auto;
-              position: relative; 
-              overflow: hidden;
-            }
-        #player{
-              width: 80px;
-              height: 20px; 
-              background: blue;
-              position: absolute;
-              bottom: 0;
-              left: 160px;
-            }
-         #ball{
-              width: 30px;
-              height: 30px;
-              background: red;
-              position: absolute;
-              top: 0;
-              left: 100px;  
-            }
- </style>
+<!DOCTYPE html><html>
+<head>
+  <title>接球遊戲</title>
+  <style>
+    body {
+      text-align: center;
+      background: lightblue;
+    }#game {
+  width: 400px;
+  height: 500px;
+  background: white;
+  border: 2px solid black;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
 
-    </head>
-    <body>
-<div>得分：<span id="score">0</span>分</div>
-<div id="roll"></div>
-<div id="player"></div>   
-<div id="ball"></div>
-    <script>
-player=document.getElementById("player");
-ball=document.getElementById("ball");
-game=document.getElementById("game");
-score=document.getElementById("score");
-    </script>
+#player {
+  width: 80px;
+  height: 20px;
+  background: blue;
+  position: absolute;
+  bottom: 0;
+  left: 160px;
+}
+
+#ball {
+  width: 30px;
+  height: 30px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 100px;
+}
+
+  </style>
+</head>
+<body><h1>接球遊戲</h1>
+<p>用滑鼠移動藍色板子接球</p>
+<p id="score">分數：0</p><div id="game">
+  <div id="player"></div>
+  <div id="ball"></div>
+</div><script>
+  let player = document.getElementById("player");
+  let ball = document.getElementById("ball");
+  let game = document.getElementById("game");
+  let scoreText = document.getElementById("score");
+
+  let ballTop = 0;
+  let ballLeft = 100;
+  let score = 0;
+
+  
+  game.onmousemove = function(event) {
+    let x = event.offsetX;
+    player.style.left = x - 40 + "px";
+  }
+
+  
+  setInterval(function() {
+    ballTop = ballTop + 5;
+    ball.style.top = ballTop + "px";
+
     
-    </body>
-    </html>
+    let playerLeft = parseInt(player.style.left);
+
+    if (ballTop > 450) {
+      if (ballLeft > playerLeft && ballLeft < playerLeft + 80) {
+        score = score + 1;
+        scoreText.innerHTML = "分數：" + score;
+      }
+
+      
+      ballTop = 0;
+      ballLeft = Math.random() * 370;
+      ball.style.left = ballLeft + "px";
+    }
+  }, 30);
+</script></body>
+</html>
