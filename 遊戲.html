@@ -1,4 +1,4 @@
-<!DOCTYPE html><html>
+<html>
 <head>
   <title>接球遊戲</title>
   <style>
@@ -42,14 +42,14 @@
   <div id="player"></div>
   <div id="ball"></div>
 </div><script>
-  let player = document.getElementById("player");
-  let ball = document.getElementById("ball");
-  let game = document.getElementById("game");
-  let scoreText = document.getElementById("score");
-
-  let ballTop = 0;
-  let ballLeft = 100;
-  let score = 0;
+   player = document.getElementById("player");
+   ball = document.getElementById("ball");
+   game = document.getElementById("game");
+   scoreText = document.getElementById("score");
+   
+   ballTop = 0;
+   ballLeft = 100;
+   score = 0;
 
   
   game.onmousemove = function(event) {
@@ -57,9 +57,12 @@
     player.style.left = x - 40 + "px";
   }
 
-  
-  setInterval(function() {
-    ballTop = ballTop + 5;
+gameOver=false;
+timer= setInterval(function() {
+    if(gameOver){
+      return;
+    }
+  ballTop = ballTop + 5;
     ball.style.top = ballTop + "px";
 
     
@@ -69,13 +72,19 @@
       if (ballLeft > playerLeft && ballLeft < playerLeft + 80) {
         score = score + 1;
         scoreText.innerHTML = "分數：" + score;
-      }
-
       
       ballTop = 0;
       ballLeft = Math.random() * 370;
       ball.style.left = ballLeft + "px";
-    }
-  }, 30);
-</script></body>
+      }
+    else{
+    gameOver=true;
+    clearInterval(timer);
+    alert("遊戲結束");
+  }
+  }
+   }, 30);
+   </script>
+
+</body>
 </html>
